@@ -1,6 +1,6 @@
-# 📚 Libris
+# 📚 ReadCast
 
-**Libris** is a modern personal online library built with Next.js, designed for reading **EPUB books directly in the browser**.  
+**ReadCast** is a modern personal online library built with Next.js, designed for reading **EPUB books directly in the browser**.  
 It was created with a special use case in mind: accessing and reading books comfortably on devices with limited browsers such as Smart TVs.
 
 ---
