@@ -61,34 +61,38 @@ export default function Reader({
   useEffect(() => {
     if (!renditionRef.current) return;
 
+    const rendition = renditionRef.current;
+
     const background =
-      theme === "light"
+        theme === "light"
         ? "#f8fafc"
         : theme === "sepia"
         ? "#f5ecd9"
         : "#0f172a";
 
     const color =
-      theme === "light"
+        theme === "light"
         ? "#111827"
         : theme === "sepia"
         ? "#3f2f1f"
         : "#f8fafc";
 
-    renditionRef.current.themes.default({
-      body: {
-        "font-family": selectedFont,
-        "font-size": `${fontSize}px`,
-        color,
-        background,
-        "line-height": "1.8",
-        padding: "24px",
-      },
-      p: {
+    rendition.themes.register("custom", {
+        body: {
+        "font-family": selectedFont + " !important",
+        "font-size": `${fontSize}px !important`,
+        color: color + " !important",
+        background: background + " !important",
+        "line-height": "1.8 !important",
+        padding: "24px !important",
+        },
+        p: {
         "margin-bottom": "1em",
-      },
+        },
     });
-  }, [selectedFont, fontSize, theme]);
+
+    rendition.themes.select("custom");
+    }, [selectedFont, fontSize, theme]);
 
   /* Keyboard Navigation */
   useEffect(() => {
