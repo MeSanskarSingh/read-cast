@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+/* ===============================
+   CUSTOM FONTS
+================================= */
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("/fonts/Merriweather-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/fonts/Lora-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/EBGaramond-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* ===============================
+   ROOT VARIABLES
+================================= */
+
+:root {
+  --background: #0b0f19;
+  --foreground: #f5f7fa;
+  --muted: #94a3b8;
+  --card: #111827;
+  --card-hover: #1f2937;
+  --border: #1e293b;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+
+  --reader-bg-dark: #0f172a;
+  --reader-bg-light: #f8fafc;
+  --reader-bg-sepia: #f5ecd9;
+
+  --reader-text-dark: #f8fafc;
+  --reader-text-light: #111827;
+  --reader-text-sepia: #3f2f1f;
+}
+
+/* ===============================
+   BASE RESET
+================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#__next {
+  width: 100%;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===============================
+   TV FRIENDLY DEFAULTS
+================================= */
+
+body {
+  font-size: 18px;
+}
+
+@media (min-width: 1400px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+/* ===============================
+   LINKS / BUTTONS
+================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* ===============================
+   SCROLLBAR
+================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ===============================
+   LAYOUT UTILITIES
+================================= */
+
+.container-app {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.section-gap {
+  margin-top: 2rem;
+}
+
+.card-ui {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  transition: all 0.2s ease;
+}
+
+.card-ui:hover {
+  background: var(--card-hover);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.8rem;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: #1e293b;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.8rem;
+}
+
+/* ===============================
+   TEXT UTILITIES
+================================= */
+
+.text-muted {
+  color: var(--muted);
+}
+
+.heading-xl {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.heading-lg {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.heading-md {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* ===============================
+   READER MODES
+================================= */
+
+.reader-dark {
+  background: var(--reader-bg-dark);
+  color: var(--reader-text-dark);
+}
+
+.reader-light {
+  background: var(--reader-bg-light);
+  color: var(--reader-text-light);
+}
+
+.reader-sepia {
+  background: var(--reader-bg-sepia);
+  color: var(--reader-text-sepia);
+}
+
+/* ===============================
+   DROPDOWNS / INPUTS
+================================= */
+
+select,
+input {
+  background: #111827;
+  color: white;
+  border: 1px solid #334155;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+}
+
+/* ===============================
+   LOADER
+================================= */
+
+.loader-spin {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #334155;
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===============================
+   IMAGE DEFAULTS
+================================= */
+
+img {
+  max-width: 100%;
+  display: block;
+}
